@@ -1,11 +1,12 @@
 package fetch
 
+import Chisel.Cat
 import chisel3._
 import chisel3.experimental.IO
 import chisel3.util.experimental.loadMemoryFromFile
 import common.Consts._
 
-class Memory {
+class Memory extends Module {
   val io = IO(new Bundle() {
     val imem = new ImemPortIo()
   })

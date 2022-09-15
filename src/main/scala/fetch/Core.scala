@@ -4,7 +4,7 @@ import chisel3._
 import chisel3.experimental.IO
 import common.Consts._
 
-class Core {
+class Core extends Module {
   // ImemPortIoを反転したもの
   // 出力addr 入力inst
   val io = IO(new Bundle() {
@@ -28,4 +28,8 @@ class Core {
 
   // exit
   io.exit := (inst === 0x34333231.U(WORD_LEN.W))
+
+  printf(p"pc_reg: 0x${Hexadecimal(pc_reg)}\n")
+  printf(p"inst  : 0x${Hexadecimal(inst)}\n")
+  printf(p"------\n")
 }

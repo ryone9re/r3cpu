@@ -9,7 +9,7 @@ class ImemPortIo extends Bundle {
   val inst = Output(UInt(WORD_LEN.W))
 }
 
-class Top {
+class Top extends Module {
   val io = IO(new Bundle() {
     val exit = Output(Bool())
   })
